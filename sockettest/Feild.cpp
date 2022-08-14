@@ -54,7 +54,6 @@ bool isEndLine(int i) {
 bool DrawSnake(Snake* tempsnake,int i,int j){
 	if (i == tempsnake->SnakeHeadi) {
 		if (j == tempsnake->SnakeHeadj) {
-			printf("*");
 			return 1;
 		}
 	}
@@ -64,7 +63,6 @@ bool DrawSnake(Snake* tempsnake,int i,int j){
 bool DrawGoal(Goal* tempgoal,int i ,int j) {
 	if (i == tempgoal->positioni) {
 		if (j == tempgoal->positionj) {
-			printf("@");
 			return 1;
 		}
 	}
@@ -78,33 +76,41 @@ void CreateField(void) {
 	int isGoalDrew = 0;
 	for ( j = 0;j < MapLength;j++) {
 		for (i = 0; i < MapLength;i++) {
+
 			isSnakeDrew = DrawSnake(tempsnake, i, j);
 			isGoalDrew = DrawGoal(tempgoal,i,j);
 			if (IsConner(i,j) == true) {
 				printf("%c", CONNER);
+				
 			}
 			else if (IsWallH(i,j) == true) {
 				printf("%c", WALLH);
+				
 			}
 			else if (IsWallZ(i, j) == true) {
 				printf("%c", WALLZ);
-			}
-			else {
-				if (isSnakeDrew == 0 ) {
-					printf(" ");
-				}
-				if (isGoalDrew == 0) {
-					printf(" ");
-				}
-			}
-
-			if (isEndLine(i) == true) {
-				printf("\n");
 				
 			}
+			else {
+				if (isSnakeDrew == 1) {
+					printf("*");
+				}
+				else if (isGoalDrew == 1) {
+					printf("@");
+				}
+				else {
+					printf(" ");
+				}
+			}
+			if (isEndLine(i) == true) {
+				printf("\n");
+
+			}
+
 		}
 		i = 0;
 	}
+	printf("Score: %d", getScore());
 }
 
 

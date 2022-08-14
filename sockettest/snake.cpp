@@ -17,10 +17,15 @@
 #define GOAL_SCORE 10;
 
 int MoveUpdated = 0;
+int Score = 0;
 unsigned char MoveDirection = 0;
 Goal gGoal;
 Snake g_Snake;
+bool ReNewGoal;
 
+int getScore() {
+	return Score;
+}
 Snake* getSnake() {
 	return &g_Snake;
 }
@@ -28,27 +33,50 @@ Snake* getSnake() {
 int getMoveUpdated() {
 	return MoveUpdated;
 }
+void UPdateNewGoal() {
+	int i,j;
+	if (ReNewGoal == 1) {
+		srand(time(NULL) + rand());
+		i = rand() % MapLength;
+		gGoal.positioni = i;
 
+		srand(time(NULL) + rand()*2);
+		j = rand() % MapLength;
+		gGoal.positioni = j;
+	}
+}
+
+void UpdateScore() {
+	Snake* lSnake = getSnake();
+	Goal* lgoal = getGoal();
+	ReNewGoal = 0;
+	if (lSnake->SnakeHeadi == lgoal->positioni && lSnake->SnakeHeadj == lgoal->positionj) {
+		Score += lgoal->score;
+		ReNewGoal = 1;
+	}
+}
 
 void ini_snake() {
 	int i = 0;
 	int j = 0;
 	Snake* gSnake = getSnake();
+	srand(time(NULL));
 	while(true){
 		if (i >= 2 && i <= MapLength - 2) {
 			break;
 		}
 		else {
-			srand(time(NULL));
+			srand(time(NULL) + rand());
 			i = rand() % MapLength;
 		}
 	}
+	srand(time(NULL));
 	while(true){
 		if (j >= 2 && j <= MapLength - 2) {
 			break;
 		}
 		else {
-			srand(time(NULL));
+			srand(time(NULL) + rand()*4);
 			j = rand() % MapLength;
 		}
 	}
@@ -65,7 +93,7 @@ void ini_goal() {
 			break;
 		}
 		else {
-			srand(time(NULL));
+			srand(time(NULL) + rand()*2);
 			i = rand() % MapLength;
 		}
 	}
@@ -74,7 +102,7 @@ void ini_goal() {
 			break;
 		}
 		else {
-			srand(time(NULL));
+			srand(time(NULL) + rand()*3);
 			j = rand() % MapLength;
 		}
 	}

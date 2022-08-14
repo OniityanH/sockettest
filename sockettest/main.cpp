@@ -6,13 +6,15 @@
 #include <time.h>
 int main(void) {
 	ini_snake();
-	srand(time((int*)rand()));
+	srand(time(NULL));
 	ini_goal();
 	while (true) {
 		system("cls");
 		CreateField();
 		GetMoveCMD();
 		UpdateSnake();
+		UpdateScore();
+		UPdateNewGoal();
 	}
 	return 0;
 }

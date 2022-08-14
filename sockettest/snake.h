@@ -19,9 +19,15 @@ struct Goal {
 
 extern Snake* getSnake(void);
 
+int getScore();
+
 extern void UpdateSnake();
 
 extern void ini_snake(void);
+
+void UpdateScore();
+
+void UPdateNewGoal();
 
 extern void ini_goal();
 

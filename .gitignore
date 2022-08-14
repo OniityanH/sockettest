@@ -21,3 +21,8 @@ sockettest/x64/Debug/main.obj
 *.ilk
 *.idb
 *.pdb
+*.obj
+*.obj
+*.obj
+*.obj
+*.ilk
