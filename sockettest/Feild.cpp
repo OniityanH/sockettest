@@ -61,13 +61,25 @@ bool DrawSnake(Snake* tempsnake,int i,int j){
 	return 0;
 };
 
+bool DrawGoal(Goal* tempgoal,int i ,int j) {
+	if (i == tempgoal->positioni) {
+		if (j == tempgoal->positionj) {
+			printf("@");
+			return 1;
+		}
+	}
+	return 0;
+}
+
 void CreateField(void) {
 	Snake* tempsnake = getSnake();
+	Goal* tempgoal = getGoal();
 	int isSnakeDrew = 0;
+	int isGoalDrew = 0;
 	for ( j = 0;j < MapLength;j++) {
 		for (i = 0; i < MapLength;i++) {
 			isSnakeDrew = DrawSnake(tempsnake, i, j);
-
+			isGoalDrew = DrawGoal(tempgoal,i,j);
 			if (IsConner(i,j) == true) {
 				printf("%c", CONNER);
 			}
@@ -78,7 +90,10 @@ void CreateField(void) {
 				printf("%c", WALLZ);
 			}
 			else {
-				if (isSnakeDrew == 0) {
+				if (isSnakeDrew == 0 ) {
+					printf(" ");
+				}
+				if (isGoalDrew == 0) {
 					printf(" ");
 				}
 			}
@@ -87,9 +102,6 @@ void CreateField(void) {
 				printf("\n");
 				
 			}
-
-
-
 		}
 		i = 0;
 	}

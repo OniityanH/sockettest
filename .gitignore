@@ -13,3 +13,11 @@
 .vs/sockettest/v17/.suo
 *.lock
 *.vsidx
+*.obj
+sockettest/x64/Debug/main.obj
+*.ilk
+*.idb
+*.obj
+*.ilk
+*.idb
+*.pdb

@@ -14,10 +14,11 @@
 #define s 0x73
 #define a 0x61
 #define d 0x64
+#define GOAL_SCORE 10;
 
 int MoveUpdated = 0;
 unsigned char MoveDirection = 0;
-
+Goal gGoal;
 Snake g_Snake;
 
 Snake* getSnake() {
@@ -56,10 +57,39 @@ void ini_snake() {
 	gSnake->SnakeLength = 0;
 }
 
+void ini_goal() {
+	int i = 0;
+	int j = 0;
+	while (true) {
+		if (i >= 2 && i <= MapLength - 2) {
+			break;
+		}
+		else {
+			srand(time(NULL));
+			i = rand() % MapLength;
+		}
+	}
+	while (true) {
+		if (j >= 2 && j <= MapLength - 2) {
+			break;
+		}
+		else {
+			srand(time(NULL));
+			j = rand() % MapLength;
+		}
+	}
+	gGoal.positioni = i;
+	gGoal.positionj = j;
+	gGoal.score = GOAL_SCORE;
+}
 
 void GetMoveCMD() {
 	MoveDirection = _getch();
 	MoveUpdated = 1;
+}
+
+Goal* getGoal(){
+	return &gGoal;
 }
 
 int movingDirection(Snake* tempsnake) {

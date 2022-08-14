@@ -3,8 +3,11 @@
 #include "stdio.h"
 #include "snake.h"
 #include <windows.h>
+#include <time.h>
 int main(void) {
 	ini_snake();
+	srand(time((int*)rand()));
+	ini_goal();
 	while (true) {
 		system("cls");
 		CreateField();

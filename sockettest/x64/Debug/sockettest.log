@@ -1,2 +1,3 @@
 ﻿  main.cpp
+C:\Users\Administrator\source\repos\sockettest\sockettest\main.cpp(9,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   sockettest.vcxproj -> C:\Users\Administrator\source\repos\sockettest\x64\Debug\sockettest.exe

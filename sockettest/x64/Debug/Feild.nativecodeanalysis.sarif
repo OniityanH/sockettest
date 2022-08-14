@@ -26,7 +26,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "1ff392f6b71600f1ae5f827c3b32221c3efddb18463d64a63ca1cf3e9bc77fd8"
+            "sha-256": "7f7e1cecee01fc439674c8dbfbd7ec421ad52b179e03640351cd1002e967e459"
           }
         },
         {
@@ -34,7 +34,15 @@
             "uri": "file:///c:/users/administrator/source/repos/sockettest/sockettest/feild.h"
           },
           "hashes": {
-            "sha-256": "f558d8cb339da50020c110ffe25ae0e5ec1b20e0e6c41050db53ab0ee18072be"
+            "sha-256": "2d4c8d8d66875d89f18dabad3c85d53d19b7266036eae03fb2fedd30626e9a2e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/administrator/source/repos/sockettest/sockettest/snake.h"
+          },
+          "hashes": {
+            "sha-256": "e80792dce7dd81e2864088ecd3d43df5cd6ef483c04d0ee00810240edf065e8e"
           }
         }
       ]
