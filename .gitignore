@@ -1,0 +1,15 @@
+
+*.manifest
+.vs/sockettest/v17/ipch/AutoPCH/ff10478e9a30d0e0/SNAKE.ipch
+.vs/sockettest/v17/ipch/AutoPCH/a9efda707cb81b92/FEILF.ipch
+.vs/sockettest/v17/TestStore/0/000.testlog
+.vs/sockettest/v17/ipch/AutoPCH/9d774d30244bf39f/MAIN.ipch
+.vs/sockettest/v17/ipch/AutoPCH/4114ba977a6c9cac/FEILD.ipch
+.vs/sockettest/v17/ipch/AutoPCH/21209d0cce88cf1f/SOCKETTEST.ipch
+.vs/sockettest/v17/Browse.VC.opendb
+*.db-wal
+*.db-shm
+*.db
+.vs/sockettest/v17/.suo
+*.lock
+*.vsidx
