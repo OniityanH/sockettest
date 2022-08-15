@@ -1,23 +1,21 @@
-﻿
-#include <stdio.h>
+﻿#include <stdio.h>
 #include "Feild.h"
 #include "snake.h"
-
 
 int i;
 int j;
 
-bool IsConner(int i,int j) {
+bool IsConner(int i, int j) {
 	if (i == 0 && j == 0) {
 		return true;
 	}
 	else if (i == 0 && j == MapLength - 1) {
 		return true;
 	}
-	else if (i == MapLength -1 && j == 0) {
+	else if (i == MapLength - 1 && j == 0) {
 		return true;
 	}
-	else if (i == MapLength -1 && j == MapLength - 1) {
+	else if (i == MapLength - 1 && j == MapLength - 1) {
 		return true;
 	}
 	else {
@@ -26,8 +24,8 @@ bool IsConner(int i,int j) {
 	return false;
 }
 
-bool IsWallZ(int i,int j) {
-	if (IsConner(i,j) == false) {
+bool IsWallZ(int i, int j) {
+	if (IsConner(i, j) == false) {
 		if (j == 0 || j == MapLength - 1) {
 			return true;
 		}
@@ -51,7 +49,7 @@ bool isEndLine(int i) {
 	return false;
 }
 
-bool DrawSnake(Snake* tempsnake,int i,int j){
+bool DrawSnake(Snake* tempsnake, int i, int j) {
 	if (i == tempsnake->SnakeHeadi) {
 		if (j == tempsnake->SnakeHeadj) {
 			return 1;
@@ -60,7 +58,7 @@ bool DrawSnake(Snake* tempsnake,int i,int j){
 	return 0;
 };
 
-bool DrawGoal(Goal* tempgoal,int i ,int j) {
+bool DrawGoal(Goal* tempgoal, int i, int j) {
 	if (i == tempgoal->positioni) {
 		if (j == tempgoal->positionj) {
 			return 1;
@@ -74,22 +72,18 @@ void CreateField(void) {
 	Goal* tempgoal = getGoal();
 	int isSnakeDrew = 0;
 	int isGoalDrew = 0;
-	for ( j = 0;j < MapLength;j++) {
-		for (i = 0; i < MapLength;i++) {
-
+	for (j = 0; j < MapLength; j++) {
+		for (i = 0; i < MapLength; i++) {
 			isSnakeDrew = DrawSnake(tempsnake, i, j);
-			isGoalDrew = DrawGoal(tempgoal,i,j);
-			if (IsConner(i,j) == true) {
+			isGoalDrew = DrawGoal(tempgoal, i, j);
+			if (IsConner(i, j) == true) {
 				printf("%c", CONNER);
-				
 			}
-			else if (IsWallH(i,j) == true) {
+			else if (IsWallH(i, j) == true) {
 				printf("%c", WALLH);
-				
 			}
 			else if (IsWallZ(i, j) == true) {
 				printf("%c", WALLZ);
-				
 			}
 			else {
 				if (isSnakeDrew == 1) {
@@ -104,13 +98,9 @@ void CreateField(void) {
 			}
 			if (isEndLine(i) == true) {
 				printf("\n");
-
 			}
-
 		}
 		i = 0;
 	}
 	printf("Score: %d", getScore());
 }
-
-

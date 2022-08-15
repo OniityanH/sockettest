@@ -34,13 +34,13 @@ int getMoveUpdated() {
 	return MoveUpdated;
 }
 void UPdateNewGoal() {
-	int i,j;
+	int i, j;
 	if (ReNewGoal == 1) {
 		srand(time(NULL) + rand());
 		i = rand() % MapLength;
 		gGoal.positioni = i;
 
-		srand(time(NULL) + rand()*2);
+		srand(time(NULL) + rand() * 2);
 		j = rand() % MapLength;
 		gGoal.positioni = j;
 	}
@@ -61,7 +61,7 @@ void ini_snake() {
 	int j = 0;
 	Snake* gSnake = getSnake();
 	srand(time(NULL));
-	while(true){
+	while (true) {
 		if (i >= 2 && i <= MapLength - 2) {
 			break;
 		}
@@ -71,12 +71,12 @@ void ini_snake() {
 		}
 	}
 	srand(time(NULL));
-	while(true){
+	while (true) {
 		if (j >= 2 && j <= MapLength - 2) {
 			break;
 		}
 		else {
-			srand(time(NULL) + rand()*4);
+			srand(time(NULL) + rand() * 4);
 			j = rand() % MapLength;
 		}
 	}
@@ -93,7 +93,7 @@ void ini_goal() {
 			break;
 		}
 		else {
-			srand(time(NULL) + rand()*2);
+			srand(time(NULL) + rand() * 2);
 			i = rand() % MapLength;
 		}
 	}
@@ -102,7 +102,7 @@ void ini_goal() {
 			break;
 		}
 		else {
-			srand(time(NULL) + rand()*3);
+			srand(time(NULL) + rand() * 3);
 			j = rand() % MapLength;
 		}
 	}
@@ -116,7 +116,7 @@ void GetMoveCMD() {
 	MoveUpdated = 1;
 }
 
-Goal* getGoal(){
+Goal* getGoal() {
 	return &gGoal;
 }
 
