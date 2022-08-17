@@ -16,3 +16,5 @@ bool IsWallH(int i, int j);
 bool isEndLine(int i);
 
 void CreateField(void);
+
+void GameOver();

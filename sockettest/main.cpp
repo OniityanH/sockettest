@@ -14,6 +14,10 @@ int main(void) {
 		GetMoveCMD();
 		UpdateSnake();
 		UpdateScore();
+		if (IsSnakeDead() == 1) {
+			GameOver();
+			break;
+		}
 		UPdateNewGoal();
 	}
 	return 0;

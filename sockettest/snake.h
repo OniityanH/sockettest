@@ -34,3 +34,5 @@ extern void ini_goal();
 extern void GetMoveCMD();
 
 extern Goal* getGoal();
+
+bool IsSnakeDead();

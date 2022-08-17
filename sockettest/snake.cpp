@@ -23,6 +23,26 @@ Goal gGoal;
 Snake g_Snake;
 bool ReNewGoal;
 
+bool HitWall() {
+	if (getSnake()->SnakeHeadi == 0 || getSnake()->SnakeHeadi == MapLength - 1) {
+		return 1;
+	}
+	if (getSnake()->SnakeHeadj == 0 || getSnake()->SnakeHeadj == MapLength - 1) {
+		return 1;
+	}
+}
+
+bool IsSnakeDead() {
+	if (HitWall() == true) {
+		return 1;
+	}
+/*if (HitSelf() == true) {
+		return 1;
+	}
+*/
+	return 0;
+}
+
 int getScore() {
 	return Score;
 }

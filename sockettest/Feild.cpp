@@ -5,6 +5,10 @@
 int i;
 int j;
 
+void GameOver() {
+	printf("GAME OVER");
+}
+
 bool IsConner(int i, int j) {
 	if (i == 0 && j == 0) {
 		return true;
