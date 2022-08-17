@@ -16,12 +16,14 @@
 #define d 0x64
 #define GOAL_SCORE 10;
 
+int Snakelength = 0;
 int MoveUpdated = 0;
 int Score = 0;
 unsigned char MoveDirection = 0;
 Goal gGoal;
 Snake g_Snake;
 bool ReNewGoal;
+Snake last_cycle_snake;
 
 bool HitWall() {
 	if (getSnake()->SnakeHeadi == 0 || getSnake()->SnakeHeadi == MapLength - 1) {
@@ -66,6 +68,11 @@ void UPdateNewGoal() {
 	}
 }
 
+void SnakeLenthPlusOne() {
+
+
+}
+
 void UpdateScore() {
 	Snake* lSnake = getSnake();
 	Goal* lgoal = getGoal();
@@ -73,6 +80,8 @@ void UpdateScore() {
 	if (lSnake->SnakeHeadi == lgoal->positioni && lSnake->SnakeHeadj == lgoal->positionj) {
 		Score += lgoal->score;
 		ReNewGoal = 1;
+		Snakelength++;
+		SnakeLenthPlusOne();
 	}
 }
 

@@ -17,6 +17,8 @@ struct Goal {
 	BYTE_8 score;
 };
 
+void SnakeLenthPlusOne();
+
 extern Snake* getSnake(void);
 
 int getScore();

@@ -26,3 +26,4 @@ sockettest/x64/Debug/main.obj
 *.obj
 *.obj
 *.ilk
+ChessGANNetwork/
